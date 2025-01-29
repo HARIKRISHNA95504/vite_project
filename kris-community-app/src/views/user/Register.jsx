@@ -1,5 +1,7 @@
 import Logo1 from '../../../public/logo.png'
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
+import Login from '../user/Login';
 function register(){
     const {register,handleSubmit,watch,formState:{errors}} = useForm()
     const passwordValue = watch('password')
@@ -77,7 +79,7 @@ function register(){
                                 Create Account
                             </button>
                             <p className="text-black text-lg pt-5 text-center md:text-left">
-                                Already have an account?<span className="underline text-sky-950  font-medium">LogIn</span>
+                                Already have an account?<Link to='/Login' className="underline text-sky-950  font-medium">LogIn</Link>
                             </p>
                         </div>
                     </form>

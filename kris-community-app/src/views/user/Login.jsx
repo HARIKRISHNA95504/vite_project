@@ -1,4 +1,6 @@
+import {Link} from 'react-router-dom'
 import Logo1 from '../../../public/loginLogo.png'
+import Register from '../user/Register'
 function Login(){
     return(
         <main className="font-sans md:min-h-scrreen flex ">
@@ -43,7 +45,7 @@ function Login(){
                         <button className="border-none rounded text-white bg-blue-950 text-center w-full py-3 mt-5">Sign In</button>
                     </div>
                     
-                    <p className=" text-gray-500 text-lg lg:pl-19 pt-5">Don’t have an account yet? <span className="text-blue-950 font-semibold">Join KRIS today.</span></p>
+                    <p className=" text-gray-500 text-lg lg:pl-19 pt-5">Don’t have an account yet? <Link to='/Register' className="text-blue-950 font-semibold">Join KRIS today.</Link></p>
                 </div>
                 <div className="md:min-h-screen bg-blue-950 ">
                    <h1 className="text-white text-5xl px-9 mt-16 md:mt-80  font-semibold  ">Manage all <span className="text-yellow-500">HR Operations </span>from the comfort of your home</h1>
