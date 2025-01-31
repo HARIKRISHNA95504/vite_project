@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import Logo1 from '../../../public/loginLogo.png'
+import Logo1 from '../../assets/loginLogo.png'
 import Register from '../user/Register'
 function Login(){
     return(

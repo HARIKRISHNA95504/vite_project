@@ -1,4 +1,4 @@
-import Logo1 from '../../../public/logo.png'
+import Logo1 from '../../assets/logo.png'
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import Login from '../user/Login';
