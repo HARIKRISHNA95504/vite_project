@@ -1,7 +1,7 @@
-import Logo1 from '../../assets/logo.png'
+import Logo1 from '../../../assets/logo.png'
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import Login from '../user/Login';
+import Login from './EmployeeLogin';
 function register(){
     const {register,handleSubmit,watch,formState:{errors}} = useForm()
     const passwordValue = watch('password')

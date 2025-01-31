@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
-import Logo1 from '../../assets/loginLogo.png'
-import Register from '../user/Register'
+import Logo1 from '../../../assets/loginLogo.png'
+import Register from '../../employees/auth/EmployeeRegister'
 function Login(){
     return(
         <main className="font-sans md:min-h-scrreen flex ">

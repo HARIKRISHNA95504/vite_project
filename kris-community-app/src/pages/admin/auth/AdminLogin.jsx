@@ -1,4 +1,4 @@
-import Logo1 from '../../assets/logo.png'
+import Logo1 from '../../../assets/logo.png'
 function Login(){
     return(
        <main className=" bg-blue-950 min-h-screen  md:col-span-4 ">
