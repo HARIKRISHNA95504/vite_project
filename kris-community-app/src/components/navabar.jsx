@@ -11,14 +11,14 @@ function Navbar(){
                 </div>
             </div>
             <div className="md:grow">
-                <div className="md:space-x-7">
+                <div className="md:space-x-7 pr-26">
                         {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                     <ul className="md:flex">
-                    <li><a href="#" className=" rounded-md px-3 py-1 text-lg font-semibold  " aria-current="page">Dashboard</a></li>
+                    <li><a href="#" className=" rounded-md px-3 py-1 text-lg font-semibold hover:underline " aria-current="page">Dashboard</a></li>
                     <li><a href="#" className="rounded-md px-3 py-1 text-lg font-semibold  hover:underline  ">Team</a></li>
                     <li><a href="#" className="rounded-md px-3 py-1 text-lg font-semibold  hover:underline  ">Projects</a></li>
                     <li><a href="#" className="rounded-md px-3 py-1 text-lg font-semibold  hover:underline ">Calendar</a></li>
-                    <li><a href="#" className="rounded-md px-3 py-1 text-lg font-semibold  hover:underline ">Calendar</a></li>
+                    <li><a href="#" className="rounded-md px-3 py-1 text-lg font-semibold  hover:underline  ">Calendar</a></li>
                     </ul>
                 </div>
             </div>

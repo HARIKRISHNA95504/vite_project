@@ -5,6 +5,10 @@ import Register from './pages/employees/auth/EmployeeRegister'
 import Login from './pages/employees/auth/EmployeeLogin';
 import AdminLogin from './pages/admin/auth/AdminLogin'
 import DashboardMain from './pages/dashboard/dashboardMain'
+import ApplyForLeave from './pages/dashboard/applyForLeave'
+import AnnualLeave from './pages/dashboard/AnnualLeave';
+import SickLeave from './pages/dashboard/SickLeave';
+import LeaveRecall from './pages/dashboard/LeaveRecall';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +20,10 @@ function App() {
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/admin-login' element={<AdminLogin/>}></Route>
         <Route path='/dashboard-main' element={<DashboardMain/>}></Route>
+        <Route path='/applyfor-leave' element={<ApplyForLeave/>}></Route>
+        <Route path='/annual-leave' element={<AnnualLeave/>}></Route>
+        <Route path='/sickleave' element={<SickLeave/>}></Route>
+        <Route path='/leaverecall' element={<LeaveRecall/>}></Route>
       </Routes>
       {/* <Register/> */}
       {/* <Login/> */}

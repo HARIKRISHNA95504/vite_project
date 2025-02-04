@@ -42,9 +42,8 @@ function dashboardMain(){
             {/* chart section*/}
             <div className="    grid grid-cols-1 md:grid-cols-2 justify-items-start gap-4 mt-8  p-4">
             <div className="border-none rounded bg-white font-sans">
-                {/* <Image src={chart} alt="chart" /> */}
+            <h1>Available LeaveDays</h1>
                 <div className="md:pt-5 text-center">
-                    <h1>Available LeaveDays</h1>
                     <select className="w-3/4 py-2 md:mt-5 pl-2 rounded bg-sky-100">
                         <option >Complete Onboarding documwnts upload</option>
                         <option>Followup on clients on documents</option>
@@ -72,7 +71,6 @@ function dashboardMain(){
                 </div>
             </div>
             <div className="border-none rounded bg-white max-w-screen font-sans">
-                {/* <Image src={chart} alt="chart" /> */}
                 <div className="md:flex md:pt-9  pl-2 pr-2  justify-between  font-bold text-3xl ">
                     <h1>Announcement(s)</h1>
                 </div>
