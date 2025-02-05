@@ -76,8 +76,8 @@ function AnnualLeave(){
             </div>
         </div>
         {viewModel&&
-            <div class="relative " aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="fixed inset-0 bg-gray-500/75 transition-opacity" ></div>
+            <div className="relative " aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div className="fixed inset-0 bg-gray-500/75 transition-opacity" ></div>
           
             <div className="fixed inset-0  overflow-y-auto ">
               <div className="flex   justify-center p-10 text-center  sm:p-0">

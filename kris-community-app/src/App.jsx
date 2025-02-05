@@ -9,6 +9,8 @@ import ApplyForLeave from './pages/dashboard/applyForLeave'
 import AnnualLeave from './pages/dashboard/AnnualLeave';
 import SickLeave from './pages/dashboard/SickLeave';
 import LeaveRecall from './pages/dashboard/LeaveRecall';
+import AdminDashboard from './pages/admin/AdminDashboard'
+import LeaveManagement from './pages/admin/LeaveManagement';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +26,8 @@ function App() {
         <Route path='/annual-leave' element={<AnnualLeave/>}></Route>
         <Route path='/sickleave' element={<SickLeave/>}></Route>
         <Route path='/leaverecall' element={<LeaveRecall/>}></Route>
+        <Route path='/admin-dashboard' element={<AdminDashboard/>}></Route>
+        <Route path='/leave-management' element={<LeaveManagement/>}></Route>
       </Routes>
       {/* <Register/> */}
       {/* <Login/> */}
