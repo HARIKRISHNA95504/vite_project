@@ -1,27 +1,28 @@
-import Logo from '../../assets/logo.png'
-import Profile from '../../assets/Group 29.png'
-import Message from '../../assets/message.png'
-import Jobs from '../../assets/jobs.png'
-import Candidates from '../../assets/candidates.png'
-import Resumes from '../../assets/resumes.png'
-import User from '../../assets/user.png'
-import Leave from '../../assets/book-open.png'
-import Performance from '../../assets/performance.png'
-import Payroll from '../../assets/payroll.png'
-import Logout from '../../assets/logout.png'
-import Group47 from '../../assets/Group 47.png'
-import Group4 from '../../assets/Group 4.png'
-import Group28 from '../../assets/Group 28.png'
-import Group30 from '../../assets/Group 30.png'
-import bookopen from '../../assets/leave.png'
-import leave1 from '../../assets/leave 1.png'
-import arrow2 from '../../assets/arrow 2.png'
-import arrow3 from '../../assets/arrow 3.png'
+import {Outlet,Link} from 'react-router-dom'
+import Logo from '../../../../assets/logo.png'
+import Profile from '../../../../assets/Group 29.png'
+import Message from '../../../../assets/message.png'
+import Jobs from '../../../../assets/jobs.png'
+import Candidates from '../../../../assets/candidates.png'
+import Resumes from '../../../../assets/resumes.png'
+import User from '../../../../assets/user.png'
+import Leave from '../../../../assets/book-open.png'
+import Performance from '../../../../assets/performance.png'
+import Payroll from '../../../../assets/payroll.png'
+import Logout from '../../../../assets/logout.png'
+import Group47 from '../../../../assets/Group 47.png'
+import Group4 from '../../../../assets/Group 4.png'
+import Group28 from '../../../../assets/Group 28.png'
+import Group30 from '../../../../assets/Group 30.png'
+import bookopen from '../../../../assets/leave.png'
+import leave1 from '../../../../assets/leave 1.png'
+import arrow2 from '../../../../assets/arrow 2.png'
+import arrow3 from '../../../../assets/arrow 3.png'
 function LeaveManagement(){
     return (
         <main>
-            <div className='flex  min-h-screen bg-sky-100'>
-                <div className="w-1/6 border-none bg-blue-950  ">
+            <div className='flex   bg-sky-100'>
+                {/* <div className="w-1/6 border-none bg-blue-950  ">
                     <img src={Logo} className='h-16 pl-7 '/>
                     <div className='flex gap-5 justify-center pt-3  items-center text-white'>
                         <img src={Profile} className='h-18'/>
@@ -77,9 +78,9 @@ function LeaveManagement(){
                             <p>Logout</p>
                         </div>
                     </div>
-                </div>
-                <div className='w-5/6'>
-                    <div className='flex justify-between text-center items-center p-1'>
+                </div> */}
+                <div className='w-full'>
+                    {/* <div className='flex justify-between text-center items-center p-1'>
                         <div>
                             <img src={Group47}/>
                         </div>
@@ -92,27 +93,28 @@ function LeaveManagement(){
                             <img src={Group28}/>
                             <img src={Group30}/>
                         </div>
-                    </div>
-                    <div className='flex gap-2 pl-2 text-center font-bold'>
+                    </div> */}
+                    <div className='flex  gap-2 pl-2 text-center font-bold'>
                         <img src={bookopen} className='text-black'/>
                         <p>Leave Mangement</p>
                     </div>
                     <div className='flex gap-5 p-2 '>
-                        <div className='bg-blue-900 text-white cursor-pointer p-5 w-2/6 text-center rounded font-semibold'>
-                            <p>Leave Settings</p>
+                        <div className='bg-blue-900 text-white cursor-pointer p-5 w-2/6 text-center rounded font-semibold hover:border-none hover:rounded hover:text-black hover:px-5  hover:bg-yellow-400 hover:text-center'>
+                            <p><Link to='admin-leavesettings'>Leave Settings</Link></p>
                         </div>
-                        <div className='bg-blue-900 text-white cursor-pointer p-5 w-2/6 text-center rounded font-semibold'>
-                            <p>Leave Recall</p>
+                        <div className='bg-blue-900 text-white cursor-pointer p-5 w-2/6 text-center rounded font-semibold hover:border-none hover:rounded hover:text-black hover:px-5  hover:bg-yellow-400 hover:text-center'>
+                            <p><Link to="admin-leaverecall">Leave Recall</Link></p>
                         </div>
-                        <div className='bg-blue-900 text-white cursor-pointer p-5 w-2/6 text-center rounded font-semibold'>
-                            <p>Leave History</p>
+                        <div className='bg-blue-900 text-white cursor-pointer p-5 w-2/6 text-center rounded font-semibold hover:border-none hover:rounded hover:text-black hover:px-5  hover:bg-yellow-400 hover:text-center'>
+                            <p><Link to='admin-leavehistory'>Leave History</Link></p>
                         </div>
-                        <div className='bg-blue-900 text-white cursor-pointer p-5 w-2/6 text-center rounded font-semibold'>
-                            <p>Relief Officers</p>
+                        <div className='bg-blue-900 text-white cursor-pointer p-5 w-2/6 text-center rounded font-semibold hover:border-none hover:rounded hover:text-black hover:px-5  hover:bg-yellow-400 hover:text-center'>
+                            <p><Link to=''>Relief Officers</Link></p>
                         </div>
                     </div>
-                    <div className='flex bg-blue-900 items-center justify-center m-3 rounded'>
-                        <div>
+                    <Outlet/>
+                    {/* <div className='flex bg-blue-900 items-center justify-center m-3 rounded'>
+                        <div className='pl-3'>
                             <img src={arrow2} className='h-25'/>
                             <p className='font-semibold text-6xl text-white'>Manage ALL <span className='text-yellow-500'>Leave Applications</span></p>
                             <p className='text-lg text-white pt-2'>A relaxed employee is a performing employee.</p>
@@ -121,7 +123,8 @@ function LeaveManagement(){
                         <div>
                             <img src={leave1} className='h-60'/>
                         </div>
-                    </div>
+                    </div> */}
+                    
                 </div>
             </div>
         </main>

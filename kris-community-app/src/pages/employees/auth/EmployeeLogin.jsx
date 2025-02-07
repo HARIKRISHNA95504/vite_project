@@ -1,7 +1,26 @@
 import {Link} from 'react-router-dom'
+// import { useForm } from 'react-hook-form'
 import Logo1 from '../../../assets/loginLogo.png'
-import Register from '../../employees/auth/EmployeeRegister'
+// import axios from 'axios'
+// import { useState,useEffect} from 'react'
 function Login(){
+    // const {register,handleSubmit,formstate:{errors}} = useForm()
+    // const [employees,setEmployess] = useState([]);
+    // useEffect(()=>{
+    //     getEmployees()
+    // },[])
+    // const getEmployees = async()=>{
+    //     try{
+    //         const response = await axios.get('');
+    //         console.log(response.data)
+    //         setEmployess(response.data)
+    //     }catch(error){
+    //         console.log(error)
+    //     }
+    // }
+    // const handleLogin =async(formData)=>{
+    //     console.log(formData)
+    // }
     return(
         <main className="font-sans md:min-h-scrreen flex ">
             <div className=" grid grid-col-1 md:grid-cols-2 w-full justify-items-center ">
