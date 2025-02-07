@@ -17,6 +17,7 @@ import LeaveManagement from './pages/admin/Dashboard/leavemanagement/LeaveManage
 import AdminLeaveRecall from './pages/admin/Dashboard/leavemanagement/LeaveRecall'
 import AdminLeaveHistory from './pages/admin/Dashboard/leavemanagement/LeaveHistory';
 import AdminLeaveSettings from './pages/admin/Dashboard/leavemanagement/LeaveSettings'
+import AdminLeaveRecallModal from './components/AdminLeaveRecallModal'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +42,7 @@ function App() {
             <Route path='admin-leavesettings' element={<AdminLeaveSettings/>}></Route>
           </Route>
         </Route>
+        <Route path='/admin-leaverecall-modal'element={<AdminLeaveRecallModal/>}></Route>
         {/* <Route path='/leave-management' element={<LeaveManagement/>}></Route> */}
       </Routes>
       {/* <Register/> */}
