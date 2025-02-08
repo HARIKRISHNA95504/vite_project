@@ -13,7 +13,7 @@ function Login() {
     },[])
     const getEmployees = async()=>{
         try{
-            const response = await axios.get('http://localhost:4000/krisemployees');
+            const response = await axios.get('http://localhost:4000/krisemployees?role=employee');
             console.log(response.data)
             setEmployess(response.data)
         }catch(error){

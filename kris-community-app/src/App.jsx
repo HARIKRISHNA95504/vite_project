@@ -39,18 +39,22 @@ function App() {
         <Route path='/admin' element={<AdminLayout/>}>
           <Route path='' element={<AdminLogin/>}></Route>
         </Route>
-        <Route path='/applyfor-leave' element={<ApplyForLeave/>}></Route>
-        <Route path='/annual-leave' element={<AnnualLeave/>}></Route>
-        <Route path='/sickleave' element={<SickLeave/>}></Route>
-        <Route path='/leaverecall' element={<LeaveRecall/>}></Route>
-        {/* <Route path='/' element={<AdminDashboard/>}>
+        <Route path='/' element={<AdminDashboard/>}>
           <Route path='/dashboard' element={<DashBoard/>}></Route>
           <Route path='/leave-management' element={<LeaveManagement/>}>
             <Route path='admin-leaverecall' element={<AdminLeaveRecall/>}></Route>
             <Route path='admin-leavehistory' element={<AdminLeaveHistory/>}></Route>
             <Route path='admin-leavesettings' element={<AdminLeaveSettings/>}></Route>
           </Route>
-        </Route> */}
+        </Route>
+        
+        
+        <Route path='/applyfor-leave' element={<ApplyForLeave/>}></Route>
+        <Route path='/annual-leave' element={<AnnualLeave/>}></Route>
+        <Route path='/sickleave' element={<SickLeave/>}></Route>
+        <Route path='/leaverecall' element={<LeaveRecall/>}></Route>
+
+
         <Route path='/admin-leaverecall-modal'element={<AdminLeaveRecallModal/>}></Route>
         {/* <Route path='/leave-management' element={<LeaveManagement/>}></Route> */}
       </Routes>
