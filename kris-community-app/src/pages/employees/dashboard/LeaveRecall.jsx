@@ -1,4 +1,4 @@
-import Navbar from "../../components/navabar"
+import Navbar from "../../../components/navabar"
 export default function LeaveRecall(){
     return(
         <main>

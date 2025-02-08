@@ -1,6 +1,6 @@
-import profile from '../../assets/Group 29.png'
-import arrow from '../../assets/arrow.png'
-import Navbar  from '../../components/navabar';
+import profile from '../../../assets/Group 29.png'
+import arrow from '../../../assets/arrow.png'
+import Navbar  from '../../../components/navabar';
 
 function dashboardMain(){
     return(

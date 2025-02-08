@@ -1,5 +1,5 @@
-import Navbar from "../../components/navabar";
-import filter from '../../assets/filter.png'
+import Navbar from "../../../components/navabar";
+import filter from '../../../assets/filter.png'
 function applyForLeave(){
     return(
         <main>

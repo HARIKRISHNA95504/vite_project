@@ -10,11 +10,11 @@ import EmployeeLayout  from './components/layouts/EmployeeLayout'
 import EmployeeLogin from './pages/employees/auth/EmployeeLogin';
 import EmployeeRegister from './pages/employees/auth/EmployeeRegister'
 
-import DashboardMain from './pages/dashboard/dashboardMain'
-import ApplyForLeave from './pages/dashboard/applyForLeave'
-import AnnualLeave from './pages/dashboard/AnnualLeave';
-import SickLeave from './pages/dashboard/SickLeave';
-import LeaveRecall from './pages/dashboard/LeaveRecall';
+import DashboardMain from './pages/employees/dashboard/dashboardMain'
+import ApplyForLeave from './pages/employees/dashboard/ApplyForLeave'
+import AnnualLeave from './pages/employees/dashboard/AnnualLeave';
+import SickLeave from './pages/employees/dashboard/SickLeave';
+import LeaveRecall from './pages/employees/dashboard/LeaveRecall';
 import AdminDashboard from './pages/admin/Dashboard/AdminDashboard'
 import DashBoard from './pages/admin/Dashboard/dashboard'
 import LeaveManagement from './pages/admin/Dashboard/leavemanagement/LeaveManagement';
