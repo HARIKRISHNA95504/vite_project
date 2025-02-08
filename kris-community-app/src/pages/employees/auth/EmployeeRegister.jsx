@@ -1,11 +1,15 @@
 import Logo1 from '../../../assets/logo.png'
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function register(){
     const {register,handleSubmit,watch,formState:{errors}} = useForm()
     const passwordValue = watch('password')
+    const navigate = useNavigate()
     const registerUser=(data)=>{
         console.log(data)
+      }
+      const navigateEmployeeRegister=()=>{
+        navigate('/employee')
       }
     return(
         <div className="font-sans min-h-screen flex">
@@ -78,7 +82,7 @@ function register(){
                                 Create Account
                             </button>
                             <p className="text-black text-lg pt-5 text-center md:text-left">
-                                Already have an account?<Link to='/Login' className="underline text-sky-950  font-medium">LogIn</Link>
+                                Already have an account?<span onClick={navigateEmployeeRegister} className="underline text-sky-950  font-medium cursor-pointer">LogIn</span>
                             </p>
                         </div>
                     </form>
