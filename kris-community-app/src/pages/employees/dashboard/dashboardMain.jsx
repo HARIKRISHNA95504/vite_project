@@ -1,8 +1,13 @@
 import profile from '../../../assets/Group 29.png'
 import arrow from '../../../assets/arrow.png'
 import Navbar  from '../../../components/navabar';
+import {useNavigate} from 'react-router-dom'
 
 function dashboardMain(){
+    const navigate = useNavigate()
+    const applyForLeave=()=>{
+        navigate('/applyfor-Leave')
+    }
     return(
         <main className="font-sans bg-sky-100 min-h-screen">
             <Navbar/>
@@ -30,7 +35,7 @@ function dashboardMain(){
                 <div className="md:pl-16 pt-5">
                     <p className="font-medium text-gray-600">QuickActions</p>
                     <ul className="md:flex md:space-x-16  ">
-                        <li className="border rounded-full text-center font-medium text-black bg-white px-7 p-2">Apply for leave</li>
+                        <li className="border rounded-full text-center font-medium text-black bg-white px-7 p-2" onClick={applyForLeave}>Apply for leave</li>
                         <li className="border rounded-full text-center font-medium text-black bg-white px-7 p-2">KPI goals</li>
                         <li className="border rounded-full text-center font-medium text-black bg-white px-7 p-2">Take Appraisal</li>
                         <li className="border rounded-full text-center font-medium text-black bg-white px-7 p-2">View Payslip</li>

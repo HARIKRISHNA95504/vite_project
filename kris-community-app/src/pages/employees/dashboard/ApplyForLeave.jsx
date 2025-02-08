@@ -1,6 +1,14 @@
 import Navbar from "../../../components/navabar";
 import filter from '../../../assets/filter.png'
+import { useNavigate } from "react-router-dom";
 function applyForLeave(){
+    const navigate = useNavigate()
+    const navigateAnnualLeave = ()=>{
+        navigate('/annual-leave')
+    }
+    const navigateSickLeave =()=>{
+        navigate('/sickleave')
+    }
     return(
         <main>
             <div className="font-sans bg-sky-100 min-h-screen">
@@ -15,28 +23,28 @@ function applyForLeave(){
                      <h1 className="w-20 h-20 m-2 bg-white text-indigo-950 text-5xl font-semibold flex items-center justify-center border-none rounded-full">60</h1>
                      <div className="text-center items-center pr-3">
                         <p className="font-semibold text-white ">Annual Leave</p>
-                        <button className="bg-yellow-500 text-lg px-5 text-center font-semibold rounded rounded-full">Apply</button>
+                        <button className="bg-yellow-500 text-lg px-5 text-center font-semibold rounded rounded-full hover:cursor-pointer" onClick={navigateAnnualLeave}>Apply</button>
                      </div>
                     </div>
                     <div className="flex justify-center items-center space-x-5 ml-5 rounded bg-indigo-950">
                      <h1 className="w-20 h-20 m-2 bg-white text-indigo-950 text-5xl font-semibold flex items-center justify-center border-none rounded-full">20</h1>
                      <div className="text-center items-center pr-3">
                         <p className="font-semibold text-white ">Sick Leave</p>
-                        <button className="bg-yellow-500 text-lg px-5 text-center font-semibold rounded rounded-full">Apply</button>
+                        <button className="bg-yellow-500 text-lg px-5 text-center font-semibold rounded rounded-full hover:cursor-pointer" onClick={navigateSickLeave}>Apply</button>
                      </div>
                     </div>
                     <div className="flex justify-center items-center space-x-5 ml-5 rounded bg-indigo-950">
                      <h1 className="w-20 h-20 m-2 bg-white text-indigo-950 text-5xl font-semibold flex items-center justify-center border-none rounded-full">60</h1>
                      <div className="text-center items-center pr-3">
                         <p className="font-semibold text-white ">Maternity Leave</p>
-                        <button className="bg-yellow-500 text-lg px-5 text-center font-semibold rounded rounded-full">Apply</button>
+                        <button className="bg-yellow-500 text-lg px-5 text-center font-semibold rounded rounded-full hover:cursor-pointer">Apply</button>
                      </div>
                     </div>
                     <div className="flex justify-center items-center space-x-5 ml-5 rounded bg-indigo-950">
                      <h1 className="w-20 h-20 m-2 bg-white text-indigo-950 text-5xl font-semibold flex items-center justify-center border-none rounded-full">30</h1>
                      <div className="text-center items-center pr-3">
                         <p className="font-semibold text-white ">Compassionate Leave</p>
-                        <button className="bg-yellow-500 text-lg px-5 text-center font-semibold rounded rounded-full">Apply</button>
+                        <button className="bg-yellow-500 text-lg px-5 text-center font-semibold rounded rounded-full hover:cursor-pointer">Apply</button>
                      </div>
                     </div>
                 </div>
