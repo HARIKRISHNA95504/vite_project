@@ -1,12 +1,20 @@
 import Logo1 from '../../../assets/logo.png'
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 function register(){
     const {register,handleSubmit,watch,formState:{errors}} = useForm()
     const passwordValue = watch('password')
     const navigate = useNavigate()
-    const registerUser=(data)=>{
-        console.log(data)
+    const registerUser=  (formData)=>{
+       try{
+            const {confirmPassword,...restValues} =formData;
+           const response =  axios.post('http://localhost:4000/krisemployees',{...restValues,role:'employee'})
+            navigate('/employee')
+            console.log(response.data)
+       }catch(error){
+            console.log(error)
+       }
       }
       const navigateEmployeeRegister=()=>{
         navigate('/employee')
@@ -46,14 +54,14 @@ function register(){
                                  <p className="text-sm text-red-500">{errors.lastName?.message}</p>
                             </div>
                             <div>
-                                <label htmlFor="emailAddress" className="font-semibold text-xl text-blue-950">E-mail Address</label><br />
-                                <input className="border border-zinc-300 focus:outline-none px-7 py-2 rounded w-full" type="email" placeholder="Enter email address" id="emailAddress" name="emailAddress" {...register('emailAddress',{required:{value:true,message:"email is required"}})} />
-                                <p className='text-sm text-red-500'>{errors.emailAddress?.message}</p>
+                                <label htmlFor="email" className="font-semibold text-xl text-blue-950">E-mail Address</label><br />
+                                <input className="border border-zinc-300 focus:outline-none px-7 py-2 rounded w-full" type="email" placeholder="Enter email address" id="email" name="email" {...register('email',{required:{value:true,message:"email is required"}})} />
+                                <p className='text-sm text-red-500'>{errors.email?.message}</p>
                             </div>
                             <div>
-                                <label htmlFor="phoneNumber" className="font-semibold text-xl text-blue-950">Phone Number</label><br />
-                                <input className="border border-zinc-300 focus:outline-none px-7 py-2 rounded w-full" type="text" placeholder="Enter phone number" id="phoneNumber" name="phoneNumber" {...register('phoneNumber',{required:{value:true,message:"mobileNo is required"}})}/>
-                                <p className="text-sm text-red-500">{errors.phoneNumber?.message}</p>
+                                <label htmlFor="mobileNo" className="font-semibold text-xl text-blue-950">Phone Number</label><br />
+                                <input className="border border-zinc-300 focus:outline-none px-7 py-2 rounded w-full" type="text" placeholder="Enter phone number" id="mobileNo" name="mobileNo" {...register('mobileNo',{required:{value:true,message:"mobileNo is required"}})}/>
+                                <p className="text-sm text-red-500">{errors.mobileNo?.message}</p>
                             </div>
                             <div>
                                 <label htmlFor="password" className="font-semibold text-xl text-blue-950">Password</label><br />
@@ -78,7 +86,7 @@ function register(){
                                 <label htmlFor="terms" className="text-lg text-gray-500">I agree to all the <span className="text-blue-900 font-semibold">Terms, Privacy Policy</span></label>
                             </div>
 
-                            <button type="submit" className="text-xl text-white border rounded border-white bg-blue-950 font-semibold px-16 py-4 mt-5 w-full md:w-auto">
+                            <button  className="cursor-pointer text-xl text-white border rounded border-white bg-blue-950 font-semibold px-16 py-4 mt-5 w-full md:w-auto">
                                 Create Account
                             </button>
                             <p className="text-black text-lg pt-5 text-center md:text-left">
