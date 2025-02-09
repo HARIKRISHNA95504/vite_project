@@ -9,12 +9,15 @@ function applyForLeave(){
     const navigateSickLeave =()=>{
         navigate('/sickleave')
     }
+    const navigateDashboard=()=>{
+        navigate('/employee/dashboard-main')
+    }
     return(
         <main>
             <div className="font-sans bg-sky-100 min-h-screen">
             <Navbar/>
             <div className="md:pl-5 md:pr-5 md:pt-5">
-                <p className="bg-white md:max-w-screen md:py-3 md:pl-2 border-none rounded">DashBoard-- applyForLeave</p>
+                <p className="bg-white md:max-w-screen md:py-3 md:pl-2 border-none rounded"><span onClick={navigateDashboard} className="cursor-pointer">DashBoard</span>-- applyForLeave</p>
             </div>
             <div>
                 

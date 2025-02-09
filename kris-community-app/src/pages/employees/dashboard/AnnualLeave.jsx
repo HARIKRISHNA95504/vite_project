@@ -1,19 +1,27 @@
 import { useState } from "react"
 import Navbar from "../../../components/navabar";
 import like from '../../../assets/like 1.png'
+import { useNavigate } from "react-router-dom";
 
 function AnnualLeave(){
     const [viewModel,setViewModal]=useState(false)
     const closeModel = ()=>setViewModal(false)
+    const navigate = useNavigate()
     const toggleModel = ()=>{
         setViewModal(!viewModel)
+    }
+    const applyForLeave = ()=>{
+        navigate('/applyfor-Leave')
+    }
+    const navigateDashboard=()=>{
+        navigate('/employee/dashboard-main')
     }
     return(
         <main>
             <div className="font-sans bg-sky-100 min-h-screen">
             <Navbar/>
             <div className="md:pl-5 md:pr-5 md:pt-5">
-                <p className="bg-white md:max-w-screen md:py-3 md:pl-2 border-none rounded">DashBoard-- applyForLeave--anualLeave</p>
+                <p className="bg-white md:max-w-screen md:py-3 md:pl-2 border-none rounded"><span onClick={navigateDashboard} className="cursor-pointer">DashBoard</span>--<span onClick={applyForLeave} className="cursor-pointer"> applyForLeave</span>--anualLeave</p>
             </div>
             <div className="md:mx-40">
                 <div className="bg-white mt-9 min-h-screen ">

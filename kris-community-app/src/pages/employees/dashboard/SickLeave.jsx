@@ -1,10 +1,18 @@
 import Navbar from "../../../components/navabar"
+import { useNavigate } from "react-router-dom"
 export default function SickLeave(){
+    const navigate = useNavigate()
+    const applyForLeave = ()=>{
+        navigate('/applyfor-Leave')
+    }
+    const navigateDashboard=()=>{
+        navigate('/employee/dashboard-main')
+    }
     return(
         <div className="font-sans bg-sky-100 min-h-screen">
             <Navbar/>
             <div className="md:pl-5 md:pr-5 md:pt-5">
-                <p className="bg-white md:max-w-screen md:py-3 md:pl-2 border-none rounded">DashBoard-- applyForLeave--SickLeave</p>
+                <p className="bg-white md:max-w-screen md:py-3 md:pl-2 border-none rounded"><span onClick={navigateDashboard} className="cursor-pointer">DashBoard</span>--<span onClick={applyForLeave} className="cursor-pointer">applyForLeave</span>--SickLeave</p>
             </div>
             <div className="md:mx-40">
                 <div className="bg-white mt-9 min-h-screen ">
