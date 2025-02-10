@@ -23,6 +23,8 @@ import AdminLeaveHistory from './pages/admin/Dashboard/leavemanagement/LeaveHist
 import AdminLeaveSettings from './pages/admin/Dashboard/leavemanagement/LeaveSettings'
 import AdminLeaveRecallModal from './components/AdminLeaveRecallModal'
 
+import EmployeeManagement from './pages/admin/Dashboard/EmployeeManagement/EmployeeManagement'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -46,6 +48,7 @@ function App() {
             <Route path='admin-leavehistory' element={<AdminLeaveHistory/>}></Route>
             <Route path='admin-leavesettings' element={<AdminLeaveSettings/>}></Route>
           </Route>
+          <Route path='/employee-management' element={<EmployeeManagement/>}></Route>
         </Route>
         
         

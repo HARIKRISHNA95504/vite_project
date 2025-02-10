@@ -1,4 +1,4 @@
-import {Outlet,Link} from 'react-router-dom'
+import {Outlet,Link,useNavigate} from 'react-router-dom'
 import Logo from '../../../assets/logo.png'
 import Profile from '../../../assets/Group 29.png'
 import Message from '../../../assets/message.png'
@@ -24,6 +24,10 @@ import JohnDore from '../../../assets/Ellipse 14.png'
 import View from '../../../assets/Vector.png'
 import Download from '../../../assets/download.png'
 function AdminDashboard(){
+    const navigate = useNavigate()
+    const EmployeeManagement=()=>{
+        navigate('/employee-management')
+    }
     return(
         <main >
             <div className="flex min-h-screen bg-sky-100">
@@ -37,7 +41,7 @@ function AdminDashboard(){
                         </div>
                        
                     </div>
-                    <div className='text-white'>
+                    <div className='text-white '>
                         <h1 className='pl-2'>Features</h1>
                         <p className='border-none rounded text-black px-5 py-3 bg-yellow-400 text-center mr-4 ml-4 mb-2 mt-2 '><Link to="dashboard">DashBoard</Link></p>
                         <div className='flex justify-between p-2'>
@@ -61,9 +65,9 @@ function AdminDashboard(){
                             <p>Resumes</p>
                         </div>
                         <p className='pl-2'>Organization</p>
-                        <div className='flex gap-4 pl-7 p-1 hover:border-none hover:rounded hover:text-black hover:px-5  hover:bg-yellow-400 hover:text-center hover:mr-4 hover:ml-4  hover:mt-2'>
+                        <div className='flex gap-4 pl-7 p-1 hover:cursor-pointer hover:border-none hover:rounded hover:text-black   hover:bg-yellow-400 hover:text-center hover:mr-1 hover:ml-1  hover:mt-2'>
                             <img src={User}/>
-                            <p>Jobs</p>
+                            <p onClick={EmployeeManagement} >EmployeeManagement</p>
                         </div>
                         <div className='flex gap-3 pl-7 p-1 hover:border-none hover:rounded hover:text-black hover:px-5  hover:bg-yellow-400 hover:text-center hover:mr-4 hover:ml-4  hover:mt-2'>
                             <img src={Leave}/>
