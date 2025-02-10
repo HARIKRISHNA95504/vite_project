@@ -15,7 +15,7 @@ function AnnualLeave(){
         setViewModal(!viewModel)
     }
     const applyForLeave = ()=>{
-        navigate('/applyfor-Leave')
+        navigate('applyfor-Leave')
     }
     const navigateDashboard=()=>{
         navigate('/employee/dashboard-main')
