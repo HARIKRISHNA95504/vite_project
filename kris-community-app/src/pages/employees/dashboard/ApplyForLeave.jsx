@@ -1,7 +1,23 @@
 import Navbar from "../../../components/navabar";
 import filter from '../../../assets/filter.png'
 import { useNavigate } from "react-router-dom";
+import {useState,useEffect} from 'react'
+import axios from 'axios'    
 function applyForLeave(){
+    const [leaveHistory,setLeaveHistory] = useState([])
+     useEffect(()=>{
+        getAllLeaves()
+     },[])
+
+     const getAllLeaves=async()=>{
+        try{
+            const response = await axios.get('http://localhost:4000/leaves')
+            setLeaveHistory(response.data)
+        }catch(error){
+            console.log(error)
+        }
+     }
+
     const navigate = useNavigate()
     const navigateAnnualLeave = ()=>{
         navigate('/annual-leave')
@@ -73,52 +89,23 @@ function applyForLeave(){
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className=" bg-none rounded bg-white ">
-                                <td className="border-none  md:p-auto md:px-auto md:p-3">The Sliding </td>
-                                <td className="border-none  md:p-auto md:px-auto">Malcolm Lockyer</td>
-                                <td className="border-none  md:p-auto md:px-auto">22/04/2022</td>
-                                <td className="border-none  md:p-auto md:px-auto">28/04/2022</td>
-                                <td className="border-none  md:p-auto md:px-auto">Sick</td>
-                                <td className="border-none  md:p-auto md:px-auto">Personal</td>
-                                <td className="border-none  md:p-auto md:px-auto">
-                                    <select className="border rounded md:px-10 md:p-1 bg-indigo-950 text-white font-semibold">
-                                        <option value="Action" >Action</option>
-                                        <option value="Delete">Delete</option>
-                                        <option value="Edit">Edit</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr className=" bg-none rounded  ">
-                                <td className="border-none  md:p-auto md:px-auto md:p-3">The Sliding </td>
-                                <td className="border-none  md:p-auto md:px-auto">Malcolm Lockyer</td>
-                                <td className="border-none  md:p-auto md:px-auto">22/04/2022</td>
-                                <td className="border-none  md:p-auto md:px-auto">28/04/2022</td>
-                                <td className="border-none  md:p-auto md:px-auto">Sick</td>
-                                <td className="border-none  md:p-auto md:px-auto">Personal</td>
-                                <td className="border-none  md:p-auto md:px-auto">
-                                    <select className="border rounded md:px-10 md:p-1 bg-indigo-950 text-white font-semibold">
-                                        <option value="Action" >Action</option>
-                                        <option value="Delete">Delete</option>
-                                        <option value="Edit">Edit</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            
-                            <tr className=" bg-none rounded bg-white ">
-                                <td className="border-none  md:p-auto md:px-auto md:p-3">The Sliding </td>
-                                <td className="border-none  md:p-auto md:px-auto">Malcolm Lockyer</td>
-                                <td className="border-none  md:p-auto md:px-auto">22/04/2022</td>
-                                <td className="border-none  md:p-auto md:px-auto">28/04/2022</td>
-                                <td className="border-none  md:p-auto md:px-auto">Sick</td>
-                                <td className="border-none  md:p-auto md:px-auto">Personal</td>
-                                <td className="border-none  md:p-auto md:px-auto">
-                                    <select className="border rounded md:px-10 md:p-1 bg-indigo-950 text-white font-semibold">
-                                        <option value="Action" >Action</option>
-                                        <option value="Delete">Delete</option>
-                                        <option value="Edit">Edit</option>
-                                    </select>
-                                </td>
-                            </tr>
+                           {leaveHistory.map(leave =>(
+                                 <tr className=" bg-none rounded bg-white hover:bg-sky-100 pt-3 pb-3 ">
+                                 <td className="border-none  md:p-auto md:px-auto md:p-3">{leave.name}</td>
+                                 <td className="border-none  md:p-auto md:px-auto">{leave.duration}</td>
+                                 <td className="border-none  md:p-auto md:px-auto">{leave.startDate}</td>
+                                 <td className="border-none  md:p-auto md:px-auto">{leave.endDate}</td>
+                                 <td className="border-none  md:p-auto md:px-auto">{leave.leaveType}</td>
+                                 <td className="border-none  md:p-auto md:px-auto">{leave.reason}</td>
+                                 <td className="border-none  md:p-auto md:px-auto">
+                                     <select className="border rounded md:px-10 md:p-1 bg-indigo-950 text-white font-semibold">
+                                         <option value="Action" >Action</option>
+                                         <option value="Delete">Delete</option>
+                                         <option value="Edit">Edit</option>
+                                     </select>
+                                 </td>
+                             </tr>
+                           ))}
                         </tbody>
                     </table>
                 </div>

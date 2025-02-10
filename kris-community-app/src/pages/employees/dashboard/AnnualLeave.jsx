@@ -1,9 +1,13 @@
 import { useState } from "react"
 import Navbar from "../../../components/navabar";
 import like from '../../../assets/like 1.png'
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, useParams } from "react-router-dom";
+import {useForm} from 'react-hook-form'
+import axios from 'axios'
 function AnnualLeave(){
+    const {register,handleSubmit}=useForm()
+    const params = useParams()
+    console.log(params.leaveType)
     const [viewModel,setViewModal]=useState(false)
     const closeModel = ()=>setViewModal(false)
     const navigate = useNavigate()
@@ -16,6 +20,16 @@ function AnnualLeave(){
     const navigateDashboard=()=>{
         navigate('/employee/dashboard-main')
     }
+    const applyLeave = async(formData)=>{
+        const payLoad = {...formData}
+        try{
+            const response = await axios.post('http://localhost:4000/leaves',payLoad)
+            console.log(response.data)
+            navigate('/applyfor-Leave')
+        }catch(error){
+            console.log(error)
+        }
+    }
     return(
         <main>
             <div className="font-sans bg-sky-100 min-h-screen">
@@ -27,51 +41,56 @@ function AnnualLeave(){
                 <div className="bg-white mt-9 min-h-screen ">
                     <p className="text-center text-xl pt-9"><i className="fa-solid fa-book-open"></i> Leave Application</p>
                     <p className="text-center text-lg pt-2">Fill the required fields below to apply for annual leave.</p>
-                    <form className="items-center md:pl-20 md:pr-20 md:pt-10">
+                    <form onSubmit={handleSubmit(applyLeave)} className="items-center md:pl-20 md:pr-20 md:pt-10">
                         <div className="col-span-full ">
-                            <label htmlFor="profile" className="block text-lg font-medium text-gray-900">Profile</label>
+                            <label htmlFor="leaveType" className="block text-lg font-medium text-gray-900">Profile</label>
                             <div className="mt-2 ">
-                                <input type="text" name="profile" id="profile" autoComplete="street-address" placeholder="AnnualLeave" className="block w-full  rounded-md bg-sky-100  px-2 py-2.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400  placeholder:items-center focus:outline focus:outline-2 focus:-outline-offset-2  sm:text-sm/6"/>
+                                <select value={params.leaveType}  name="leaveType" id="leaveType"  {...register('leaveType')}  className="block w-full  rounded-md bg-sky-100  px-2 py-2.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400  placeholder:items-center focus:outline focus:outline-2 focus:-outline-offset-2  sm:text-sm/6">
+                                    <option value="Annual">AnnualLeave</option>
+                                    <option value="SickLeave">SickLeave</option>
+                                    <option value="MaternityLeave">MaternityLeave</option>
+                                    <option value="CompassinateLeave">CompassinateLeave</option>
+                                </select>
                             </div>
                         </div>
                         <div className="mt-10 md:grid grid-cols-2 w-full gap-5">
                             <div className="pb-2">
-                                <label htmlFor="first-name" className="block text-lg/6 pb-2 text-gray-900">Start Date</label>
-                                <input type="date"className="border rounded pl-1 bg-sky-100 text-gray-400  pr-1 text-xl w-full py-1   "></input>
+                                <label htmlFor="startDate" className="block text-lg/6 pb-2 text-gray-900">Start Date</label>
+                                <input id="startDate" type="date" {...register('startDate')}  className="border rounded pl-1 bg-sky-100 text-gray-400  pr-1 text-xl w-full py-1   "></input>
                             </div>
                             <div className="pb-2">
-                                <label htmlFor="first-name" className="block text-lg/6 pb-2 text-gray-900">End Date</label>
-                                <input type="date" className="border rounded pl-1 bg-sky-100 text-gray-400 pr-1 text-xl w-full py-1" placeholder="date"></input>
+                                <label htmlFor="endDate" className="block text-lg/6 pb-2 text-gray-900">End Date</label>
+                                <input id="endDate" type="date" {...register('endDate')} className="border rounded pl-1 bg-sky-100 text-gray-400 pr-1 text-xl w-full py-1" placeholder="date"></input>
                             </div>
                             <div className="pb-2">
-                                <label htmlFor="first-name" className="block text-lg/6 pb-2 text-gray-900">Duration</label>
-                                <input type="number" className="border rounded pl-1 bg-sky-100 text-gray-400 pr-1 text-xl w-full py-1" placeholder="date"></input>
+                                <label htmlFor="duration" className="block text-lg/6 pb-2 text-gray-900">Duration</label>
+                                <input id="duration" type="number" {...register('duration')} className="border rounded pl-1 bg-sky-100 text-gray-400 pr-1 text-xl w-full py-1" placeholder="date"></input>
                             </div>
                             <div className="pb-2">
-                                <label htmlFor="first-name" className="block text-lg/6 pb-2 text-gray-900">Resumption Date</label>
-                                <input type="date" className="border rounded pl-1 bg-sky-100 text-gray-400 pr-1 text-xl w-full py-1" placeholder="date"/>
+                                <label htmlFor="resumptionDate" className="block text-lg/6 pb-2 text-gray-900">Resumption Date</label>
+                                <input id="resumptionDate" type="date" {...register('resumptionDate')} className="border rounded pl-1 bg-sky-100 text-gray-400 pr-1 text-xl w-full py-1" placeholder="date"/>
                             </div>
                         </div>
                         <div className="col-span-full pt-3 ">
                             <label htmlFor="reason" className="block text-lg/6 text-gray-900">Reason For Leave</label>
                             <div className="mt-3 ">
-                                <input type="text" name="reason" id="reason" autoComplete="street-address" className="block w-full  rounded-md bg-sky-100  px-2 py-6 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300   placeholder:items-center focus:outline focus:outline-2 focus:-outline-offset-2  sm:text-sm/6"/>
+                                <input  type="text" name="reason" {...register('reason')} id="reason" autoComplete="street-address" className="block w-full  rounded-md bg-sky-100  px-2 py-6 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300   placeholder:items-center focus:outline focus:outline-2 focus:-outline-offset-2  sm:text-sm/6"/>
                             </div>
                         </div>
                         <div className="col-span-full pt-3 ">
                             <label htmlFor="documents" className="block text-lg/6 text-gray-900">Attach handover document (pdf, jpg, docx or any other format)</label>
                             <div className="mt-3 ">
-                                <input type="text" name="documents" id="documents" autoComplete="street-address" className="block w-full  rounded-md bg-sky-100  px-2 py-2.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300   placeholder:items-center focus:outline focus:outline-2 focus:-outline-offset-2  sm:text-sm/6"/>
+                                <input type="text" name="documents" {...register('documents')} id="documents" className="block w-full  rounded-md bg-sky-100  px-2 py-2.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300   placeholder:items-center focus:outline focus:outline-2 focus:-outline-offset-2  sm:text-sm/6"/>
                             </div>
                         </div>
                         <div className="col-span-full pt-3 ">
-                            <label htmlFor="street-address" className="block text-lg/6 text-gray-900">Choose Relief Officer</label>
+                            <label htmlFor="reliefOfficer" className="block text-lg/6 text-gray-900">Choose Relief Officer</label>
                             <div className="mt-3 ">
-                                <select  className="block w-full  rounded-md bg-sky-100  px-2 py-2.5 text-base text-gray-400 text-lg/6 outline outline-1 -outline-offset-1 outline-gray-300   placeholder:items-center focus:outline focus:outline-2 focus:-outline-offset-2  sm:text-sm/6">
+                                <select id="reliefOfficer" {...register('reliefOfficer')}  className="block w-full  rounded-md bg-sky-100  px-2 py-2.5 text-base text-gray-400 text-lg/6 outline outline-1 -outline-offset-1 outline-gray-300   placeholder:items-center focus:outline focus:outline-2 focus:-outline-offset-2  sm:text-sm/6">
                                 <option>Select your relief officer </option>
-                                <option>1</option>
-                                <option>1</option>
-                                <option>1</option>
+                                <option>manideep</option>
+                                <option>sreeRam</option>
+                                <option>Jack</option>
                                 </select>
                             </div>
                         </div>
