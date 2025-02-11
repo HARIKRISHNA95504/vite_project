@@ -1,5 +1,10 @@
 import filter from '../../../../assets/filter.png'
+import { useNavigate } from 'react-router-dom';
 function EmployeeManagement(){
+    const navigate =useNavigate()
+    const viewProfile = ()=>{
+        navigate('/viewprofile')
+    }
     return(
         <main>
             <h1 className='font-bold pl-2'>Dashboard / Employee Management</h1>
@@ -38,7 +43,7 @@ function EmployeeManagement(){
                             <td className="border-none  md:p-2 md:px-10 md:text-sm">HariKrishna</td>
                             <td className="border-none  md:p-2 md:px-10 md:text-sm">HariKrishna</td>
                             <td className="border-none  md:p-2 md:px-10 md:text-sm bg-blue-900 text-white rounded">
-                                <select   className='bg-blue-900 outline outline-blue-900'>
+                                <select onChange={viewProfile}   className='bg-blue-900 outline outline-blue-900'>
                                     <option value=''>Actions</option>
                                     <option value="ViewProfile" >ViewProfile</option>
                                     <option value='EditProfile'>EditProfile</option>
