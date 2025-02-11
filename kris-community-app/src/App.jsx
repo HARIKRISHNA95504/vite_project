@@ -26,6 +26,12 @@ import AdminLeaveRecallModal from './components/AdminLeaveRecallModal'
 import EmployeeManagement from './pages/admin/Dashboard/EmployeeManagement/EmployeeManagement'
 import ViewProfile from './pages/admin/Dashboard/EmployeeManagement/EmployeeProfile'
 import PersonalDetails from './pages/admin/Dashboard/EmployeeManagement/PersonalDetails'
+import ContactDetails from './pages/admin/Dashboard/EmployeeManagement/ContactDetails'
+import NextOfKinDetails from './pages/admin/Dashboard/EmployeeManagement/NextOfKinDetails'
+import EducationQualifications from './pages/admin/Dashboard/EmployeeManagement/EducationQualifications'
+import GuarantorDetails from './pages/admin/Dashboard/EmployeeManagement/GuarantorDetails'
+import FamilyDetails from './pages/admin/Dashboard/EmployeeManagement/FamilyDetails'
+import FinancialDetails from './pages/admin/Dashboard/EmployeeManagement/FinancialDetails'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -53,6 +59,12 @@ function App() {
           <Route path='/employee-management' element={<EmployeeManagement/>}></Route>
           <Route path='/viewprofile' element={<ViewProfile/>}>
             <Route path='personal-details' element={<PersonalDetails/>}></Route>
+            <Route path='contact-details' element={<ContactDetails/>}></Route>
+            <Route path='nextof-kindetails' element={<NextOfKinDetails/>}></Route>
+            <Route path='education-qualifications' element={<EducationQualifications/>}></Route>
+            <Route path='guarantor-details' element={<GuarantorDetails/>}></Route>
+            <Route path='family-details' element={<FamilyDetails/>}></Route>
+            <Route path='financial-details' element={<FinancialDetails/>}></Route>
           </Route>
         </Route>
         
