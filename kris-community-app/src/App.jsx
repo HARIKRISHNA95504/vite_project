@@ -33,6 +33,13 @@ import GuarantorDetails from './pages/admin/Dashboard/EmployeeManagement/Guarant
 import FamilyDetails from './pages/admin/Dashboard/EmployeeManagement/FamilyDetails'
 import FinancialDetails from './pages/admin/Dashboard/EmployeeManagement/FinancialDetails'
 
+import PerformanceManagement from './pages/admin/Dashboard/PerformanceManagement/PerformanceManagement'
+import TargetSetup from './pages/admin/Dashboard/PerformanceManagement/TargetSetup'
+import Targets from './pages/admin/Dashboard/PerformanceManagement/Targets'
+import Appraisals from './pages/admin/Dashboard/PerformanceManagement/Appraisals'
+import Settings from './pages/admin/Dashboard/PerformanceManagement/Settings'
+import Reports from './pages/admin/Dashboard/PerformanceManagement/Reports'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -65,6 +72,13 @@ function App() {
             <Route path='guarantor-details' element={<GuarantorDetails/>}></Route>
             <Route path='family-details' element={<FamilyDetails/>}></Route>
             <Route path='financial-details' element={<FinancialDetails/>}></Route>
+          </Route>
+          <Route path='/performance-management' element={<PerformanceManagement/>}>
+            <Route path='target-setup' element={<TargetSetup/>}></Route>
+            <Route path='targets' element={<Targets/>}></Route>
+            <Route path='appraisals' element={<Appraisals/>}></Route>
+            <Route path='settings' element={<Settings/>}></Route>
+            <Route path='reports' element={<Reports/>}></Route>
           </Route>
         </Route>
         

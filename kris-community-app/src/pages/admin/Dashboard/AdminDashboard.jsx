@@ -75,7 +75,7 @@ function AdminDashboard(){
                         </div>
                         <div className='flex gap-1 pl-7 p-2 hover:p-1 hover:border-none hover:rounded hover:text-black hover:ml-2 hover:mr-2   hover:bg-yellow-400 hover:text-center  hover:mt-2'>
                             <img src={Performance}/>
-                            <p>PerformanceManagement</p>
+                            <p><Link to='/performance-management'>PerformanceManagement</Link></p>
                         </div>
                         <p className='pl-2'>KRIS Pay</p>
                         <div className='flex gap-1 pl-7 p-2 hover:border-none hover:rounded hover:text-black hover:px-5  hover:bg-yellow-400 hover:text-center hover:mr-4 hover:ml-4  hover:mt-2'>
